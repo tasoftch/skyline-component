@@ -1,6 +1,6 @@
 {
   "name": "skyline",
-  "version": "0.8.10",
+  "version": "0.8.4",
   "description": "A description",
   "scripts": {
     "v:patch": "npm version --no-git-tag-version patch",
@@ -11,14 +11,6 @@
   "keywords": [],
   "author": "Thomas Abplanalp",
   "license": "MIT",
-  "babel": {
-    "presets": [
-      "env"
-    ],
-    "plugins": [
-      "transform-object-rest-spread"
-    ]
-  },
   "devDependencies": {
     "@babel/core": "^7.11.6",
     "@babel/preset-env": "^7.11.5",

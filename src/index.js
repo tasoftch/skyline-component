@@ -31,6 +31,9 @@
  *
  */
 
+import String from "./String";
+import Date from "./Date";
+
 (function($) {
     if(!window.Skyline) {
         window.Skyline = {
@@ -53,7 +56,9 @@
                 ARROW_DOWN: 40
             },
             tabPressed:false,
-            keyDown:false
+            keyDown:false,
+            String: String,
+            Date: Date
         };
     }
     document.addEventListener('keydown', function(e) {
