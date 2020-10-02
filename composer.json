@@ -1,0 +1,22 @@
+{
+  "name": "skyline/component-skyline",
+  "description": "This is the default component to be installed if your application wants to require any component.",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Thomas Abplanalp",
+      "email": "info@tasoft.ch"
+    }
+  ],
+  "require": {
+    "skyline/direct-components": "^0.8"
+  },
+  "require-dev": {
+    "skyline/compiler": "^0.8"
+  },
+  "scripts": {
+    "post-create-project-cmd": [
+      "npm install"
+    ]
+  }
+}
