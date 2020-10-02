@@ -147,5 +147,51 @@ export default {
                 return label;
             })
             .join('');
+    },
+
+    isDate: (obj) => {
+        return /Date/.test(Object.prototype.toString.call(obj)) && !isNaN(obj.getTime());
+    },
+
+    isWeekend: (date) => {
+        let day = date.getDay();
+        return day === 0 || day === 6;
+    },
+
+    setToDayBegin: function(date) {
+        if (this.isDate(date)) date.setHours(0, 0, 0, 0);
+    },
+
+    setToDayEnd: function(date) {
+        if (this.isDate(date)) date.setHours(23, 59, 59, 9999);
+    },
+
+    getDaysInMonth: function(year, month) {
+        return [31, this.isLeapYear(year) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][
+            month
+            ];
+    },
+
+    isLeapYear: (year) => {
+        // solution by Matti Virkkunen: http://stackoverflow.com/a/4881951
+        return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+    },
+
+    compareDates: function(a, b, byDay) {
+        if(this.isDate(a) && this.isDate(b)) {
+            if(byDay) {
+                this.setToDayBegin(a);
+                this.setToDayBegin(b);
+            }
+
+            let va = a.getTime();
+            let vb = b.getTime();
+            if(va < vb)
+                return -1;
+            if(va > vb)
+                return 1;
+            return 0;
+        }
+        return false;
     }
 };
