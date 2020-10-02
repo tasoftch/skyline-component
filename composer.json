@@ -1,7 +1,7 @@
 {
   "name": "skyline/component-skyline",
   "description": "This is the default component to be installed if your application wants to require any component.",
-  "license": "MIT",
+  "license": "BSD-3-Clause",
   "authors": [
     {
       "name": "Thomas Abplanalp",
@@ -13,10 +13,5 @@
   },
   "require-dev": {
     "skyline/compiler": "^0.8"
-  },
-  "scripts": {
-    "post-create-project-cmd": [
-      "npm install"
-    ]
   }
 }
