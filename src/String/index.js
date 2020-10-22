@@ -119,12 +119,20 @@ export default {
         },
         f: (subject, options) => {
             let {modifier, flag} = options;
-            let fraction = 1e8;
             if(modifier === '.') {
-                fraction = Math.pow(10, flag*1);
+                flag = Math.min (16, flag);
+                let fraction = Math.pow(10, flag);
+                subject = ""+Math.round(subject*fraction)+"";
+                let position = subject.length - flag;
+                return [subject.slice(0, position), ".", subject.slice(position)].join('');
             }
-
-            return Math.round(subject*fraction)/fraction;
+            return Math.round(subject*1e8)/1e8;
+        },
+        c: (subject) => {
+            return String.fromCharCode(subject % 256);
+        },
+        C: (subject) => {
+            return String.fromCharCode(subject * 1);
         }
     },
 
