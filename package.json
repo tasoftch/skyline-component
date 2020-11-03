@@ -1,6 +1,6 @@
 {
   "name": "skyline",
-  "version": "0.8.15",
+  "version": "0.8.16",
   "description": "A description",
   "scripts": {
     "v:patch": "npm version --no-git-tag-version patch",
