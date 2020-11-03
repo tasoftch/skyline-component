@@ -134,7 +134,7 @@ export default {
     },
 
     format: function (format, date) {
-        let formatArray = format.split(/(d{1,4}|m{1,4}|y{4}|yy|A|a|G|g|H|h|ii|s|!.)/g);
+        let formatArray = format.split(/(d{1,4}|m{1,4}|y{4}|yy|A|a|G|g|H|h|i|s|!.)/g);
         if(date === undefined)
             date = new Date();
 
