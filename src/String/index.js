@@ -124,7 +124,7 @@ export default {
                 let fraction = Math.pow(10, flag);
                 subject = ""+Math.round(subject*fraction)+"";
                 let position = subject.length - flag;
-                return [subject.slice(0, position), ".", subject.slice(position)].join('');
+                return [position<1?'0':subject.slice(0, position), ".", subject.slice(position)].join('');
             }
             return Math.round(subject*1e8)/1e8;
         },
@@ -137,11 +137,11 @@ export default {
     },
 
     format: function (format, ...args) {
-        let fmtArray = format.split(/(%(?:[\-.]?\d+|-?'.\d+|)[a-z]+)/ig);
+        let fmtArray = format.split(/(%(?:[\-.]?\d+|-?'.\d+|)[a-z])/ig);
         let argCount = 0;
 
         return fmtArray.map((label) => {
-            let pc = /^%(?:([\-.]?)(\d+)|(-?')(.\d+)|)([a-z]+)$/i.exec(label);
+            let pc = /^%(?:([\-.]?)(\d+)|(-?')(.\d+)|)([a-z])$/i.exec(label);
             if (pc) {
                 let [, mod1, flag1, mod2, flag2, lb] = pc;
                 let arg = args[argCount++];
