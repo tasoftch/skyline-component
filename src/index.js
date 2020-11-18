@@ -33,6 +33,7 @@
 
 import String from "./String";
 import Date from "./Date";
+import Byte from "./byte";
 
 (function($) {
     if(!window.Skyline) {
@@ -57,8 +58,9 @@ import Date from "./Date";
             },
             tabPressed:false,
             keyDown:false,
-            String: String,
-            Date: Date
+            String,
+            Date,
+            Byte
         };
     }
     document.addEventListener('keydown', function(e) {
