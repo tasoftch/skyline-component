@@ -34,6 +34,8 @@
 import String from "./String";
 import Date from "./Date";
 import Byte from "./byte";
+import {Observer} from "./observer";
+import Cookie from "./cookie"
 
 (function($) {
     if(!window.Skyline) {
@@ -60,7 +62,9 @@ import Byte from "./byte";
             keyDown:false,
             String,
             Date,
-            Byte
+            Byte,
+            Observer: new Observer(),
+            Cookie
         };
     }
     document.addEventListener('keydown', function(e) {
