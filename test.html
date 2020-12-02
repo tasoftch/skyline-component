@@ -41,7 +41,10 @@
 </head>
 <body>
 <script type="application/javascript">
-    alert( Skyline.Byte.format(20000, "%.3f %s") );
+    Skyline.Cookie.config.json = true;
+    console.log(Skyline.Cookie.get());
+
+    //console.log(Skyline.Cookie.set("ikarus", [1,2,3]));
 </script>
 </body>
 </html>
