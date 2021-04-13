@@ -79,11 +79,13 @@ export default {
                 return `${subject}${padding}`;
         },
         d: (subject, options) => {
-            subject = `${subject * 1}`;
+            subject=Math.round(subject);
+            subject = `${subject}`;
+
             let {flag} = options;
             let character = readChar(flag, "0");
             let padding = applyPadding(subject, character);
-            return `${padding}${subject * 1}`
+            return `${padding}${subject}`
         },
         x: (subject, options) => {
             let {flag} = options;
