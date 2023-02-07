@@ -9,9 +9,9 @@
     }
   ],
   "require": {
-    "skyline/direct-components": "^0.8"
+    "skyline/direct-components": "^0.8|^8"
   },
   "require-dev": {
-    "skyline/compiler": "^0.8"
+    "skyline/compiler": "^0.8|^8"
   }
 }
